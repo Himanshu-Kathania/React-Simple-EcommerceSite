@@ -12,6 +12,7 @@ const Home = () => {
       <div className=" w-[85%] p-10 pt-[5%] flex flex-wrap overflow-y-auto overflow-x-hidden  ">
         {Products.map((p, i) => (
           <Link
+            key={p.id}
             to={`/details/${p.id}`}
             className="border shadow w-[18%] h-[30vh] card flex flex-col justify-center items-center p-3 mr-3 "
           >
