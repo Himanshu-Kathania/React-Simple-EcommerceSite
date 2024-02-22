@@ -1,7 +1,7 @@
-import React from "react";
 import axios from "axios";
 
-export const axios = () => {
-  return <div>axios</div>;
-};
-w;
+const instance = axios.create({
+  baseURL: "https://fakestoreapi.com/",
+});
+
+export default instance;

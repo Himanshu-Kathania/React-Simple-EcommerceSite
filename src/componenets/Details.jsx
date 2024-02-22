@@ -1,6 +1,21 @@
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { PorductContext } from "../ultils/Context";
 
 const Details = () => {
+  const getsingleproduct = async () => {
+    try {
+      const { data } = await axios.get(`/products/${id}`);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getsingleproduct();
+  }, []);
+
   return (
     <div className=" flex w-[70%] h-full justify-between gap-5 m-auto p-[10%] ">
       <img
