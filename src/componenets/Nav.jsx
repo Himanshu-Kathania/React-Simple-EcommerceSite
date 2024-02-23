@@ -8,7 +8,7 @@ const Nav = () => {
   let distinct_category =
     Products && Products.reduce((acc, cv) => [...acc, cv.category], []);
   distinct_category = [...new Set(distinct_category)];
-  console.log(distinct_category);
+
   return (
     <>
       <nav className="w-[15%] h-full bg-zinc-300 flex flex-col items-center pt-5">
