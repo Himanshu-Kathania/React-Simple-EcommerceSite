@@ -10,7 +10,6 @@ const Home = () => {
   const { search } = useLocation();
 
   const category = decodeURIComponent(search.split("=")[1]);
-  console.log(category);
 
   const [filteredProducts, setfilteredProducts] = useState(null);
 
@@ -24,7 +23,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!filteredProducts) setfilteredProducts(Products);
+    if (!filteredProducts || category == "undefined")
+      setfilteredProducts(Products);
     if (category != "undefined") getproductcategory();
   }, [category, Products]);
 
