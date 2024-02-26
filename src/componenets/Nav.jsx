@@ -13,7 +13,8 @@ const Nav = () => {
     <>
       <nav className="w-[15%] h-full bg-zinc-300 flex flex-col items-center pt-5">
         <a
-          href=""
+          to={"/create"}
+          href="/create"
           className="py-3 px-5 rounded border text-blue-600 border-blue-400"
         >
           Add New Product
