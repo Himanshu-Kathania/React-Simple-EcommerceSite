@@ -12,13 +12,13 @@ const Nav = () => {
   return (
     <>
       <nav className="w-[15%] h-full bg-zinc-300 flex flex-col items-center pt-5">
-        <a
-          to={"/create"}
+        <Link
+          to={"Create"}
           href="/create"
           className="py-3 px-5 rounded border text-blue-600 border-blue-400"
         >
           Add New Product
-        </a>
+        </Link>
         <hr className="w-[80%] my-3" />
         <h1 className="text-2xl mb-3 w-[80%]">Catagory</h1>
         <div className="w-[80%]">

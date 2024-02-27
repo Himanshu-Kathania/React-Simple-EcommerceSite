@@ -32,7 +32,7 @@ const Home = () => {
     <>
       <Nav />
 
-      <div className=" w-[85%] p-10 pt-[5%] flex flex-wrap overflow-y-auto overflow-x-hidden  ">
+      <div className=" w-[85%] p-10 pt-[5%] flex flex-wrap overflow-y-auto overflow-x-hidden ">
         {filteredProducts &&
           filteredProducts.map((p, i) => (
             <Link

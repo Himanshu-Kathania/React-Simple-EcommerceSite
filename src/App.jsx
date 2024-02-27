@@ -1,11 +1,13 @@
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Home from "./componenets/Home";
+import Details from "./componenets/Details";
 import Create from "./componenets/Create";
 
 function App() {
   const { search, pathname } = useLocation();
 
+  console.log(pathname);
   return (
     <>
       <div className="w-screen h-screen flex ">
@@ -20,9 +22,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-
-          <Route path="/details/:id" element={<Create />} />
           <Route path="/create" element={<Create />} />
+
+          <Route path="/details/:id" element={<Details />} />
         </Routes>
       </div>
     </>

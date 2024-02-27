@@ -19,6 +19,8 @@ const Context = (props) => {
     getproducts();
   }, []);
 
+  console.log(products);
+
   return (
     <PorductContext.Provider value={[products, setProducts]}>
       {props.children}
