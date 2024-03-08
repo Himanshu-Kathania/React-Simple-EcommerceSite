@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "../ultils/axios";
 import Loading from "./Loading";
 import { PorductContext } from "../ultils/Context";
 
 const Details = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useContext(PorductContext);
   const [product, setproduct] = useState(null);
 
@@ -25,6 +26,13 @@ const Details = () => {
     // getsingleproduct();
   }, []);
 
+  const ProductDeleteHandler = (id) => {
+    const FilteredProducts = products.filter((p) => p.id !== id);
+    setProducts(FilteredProducts);
+    localStorage.setItem("products", JSON.stringify(FilteredProducts));
+    navigate("/");
+  };
+
   return product ? (
     <div className=" flex w-[70%] h-full justify-between gap-5 m-auto p-[10%] ">
       <img
@@ -38,12 +46,18 @@ const Details = () => {
         <h3 className="text-zinc-500 my-5  "> {product.category}</h3>
         <h2 className="text-red-300">$ {product.price}</h2>
         <p className="mb-8">{product.description}</p>
-        <Link className="mr-5 py-3 px-5 rounded border text-blue-600 border-blue-400">
+        <Link
+          to={`/edit/${product.id}`}
+          className="mr-5 py-3 px-5 rounded border text-blue-600 border-blue-400"
+        >
           Edit
         </Link>
-        <Link className="py-3 px-5 rounded border text-red-600 border-red-400">
+        <button
+          onClick={() => ProductDeleteHandler(product.id)}
+          className="py-3 px-5 rounded border text-red-600 border-red-400"
+        >
           Delete
-        </Link>
+        </button>
       </div>
     </div>
   ) : (

@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./componenets/Home";
 import Details from "./componenets/Details";
 import Create from "./componenets/Create";
+import Edit from "./componenets/Edit";
 
 function App() {
   const { search, pathname } = useLocation();
@@ -23,8 +24,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
-
           <Route path="/details/:id" element={<Details />} />
+          <Route path="/edit/:id" element={<Edit />} />
         </Routes>
       </div>
     </>

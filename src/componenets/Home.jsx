@@ -26,8 +26,9 @@ const Home = () => {
     if (!filteredProducts || category == "undefined")
       setfilteredProducts(Products);
     if (category != "undefined") {
-      getproductcategory();
-      // setfilteredProducts(Products.filter((p) => p.category == category));
+      {
+        setfilteredProducts(Products.filter((p) => p.category == category));
+      }
     }
   }, [category, Products]);
 
